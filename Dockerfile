@@ -4,8 +4,7 @@ FROM fedora:32
 RUN sudo dnf -y update
 RUN sudo dnf -y install gcc cmake
 
-#Add a developer user account
-RUN useradd -ms /bin/bash developer
+# Add /build directory to store the project for building
+RUN mkdir /build
 
-USER developer
-WORKDIR /home/developer
+WORKDIR /build
